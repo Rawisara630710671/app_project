@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_project/view/notidust_view.dart';
-import 'dart:async';
+import 'package:get/get.dart';
 
 void main() {
   runApp(App());
@@ -11,7 +11,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: NotiDustView(),
     );
   }
