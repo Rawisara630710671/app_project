@@ -1,3 +1,4 @@
+import 'package:app_project/view/widgets/text.from.global.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -5,7 +6,10 @@ import 'package:app_project/utils/global.colors.dart';
 import 'package:get/get.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,8 @@ class LoginView extends StatelessWidget {
               children: [
                 Container(
                   alignment: Alignment.center,
-                  child: Text('Logo',
+                  child: Text(
+                    'Noti DUST',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: GlobalColors.mainColor,
@@ -39,6 +44,25 @@ class LoginView extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
+
+                const SizedBox(height: 50),
+
+                // Email Input
+                TextFormGlobal(
+                  controller: emailController,
+                  text: 'Email',
+                  obscure: false,
+                  textInputType: TextInputType.emailAddress,
+                ),
+
+                const SizedBox(height: 6),
+
+                // Password Input
+                TextFormGlobal(
+                    controller: passwordController,
+                    text: 'Password',
+                    textInputType: TextInputType.text,
+                    obscure: true)
               ],
             ),
           ),

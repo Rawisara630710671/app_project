@@ -10,14 +10,14 @@ class NotiDustView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 3), () {
       Get.to(LoginView());
     });
     return Scaffold(
       backgroundColor: GlobalColors.mainColor,
       body: Center(
         child: Text(
-          'Logo',
+          'Noti DUST',
           style: TextStyle(
           color: Colors.white,
           fontSize: 35,
