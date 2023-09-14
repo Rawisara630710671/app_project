@@ -1,9 +1,8 @@
+import 'package:app_project/view/widgets/button.global.dart';
+import 'package:app_project/view/widgets/social.login.dart';
 import 'package:app_project/view/widgets/text.from.global.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:app_project/utils/global.colors.dart';
-import 'package:get/get.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
@@ -23,6 +22,7 @@ class LoginView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 20),
                 Container(
                   alignment: Alignment.center,
                   child: Text(
@@ -55,17 +55,42 @@ class LoginView extends StatelessWidget {
                   textInputType: TextInputType.emailAddress,
                 ),
 
-                const SizedBox(height: 6),
+                const SizedBox(height: 10),
 
                 // Password Input
                 TextFormGlobal(
                     controller: passwordController,
                     text: 'Password',
                     textInputType: TextInputType.text,
-                    obscure: true)
+                    obscure: true
+                ),
+                const SizedBox(height: 20),
+                const ButtonGlobal(),
+                const SizedBox(height: 30),
+                SocialLogin(),
               ],
             ),
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        color:  Colors.white,
+        alignment: Alignment.center,
+        child: Row(
+          children: [
+            Text(
+              'Don\'t have an account?'
+            ),
+            InkWell(
+              child: Text(
+                ' Sign Up',
+                style: TextStyle(
+                  color: GlobalColors.mainColor,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
