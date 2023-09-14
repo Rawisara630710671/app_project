@@ -1,8 +1,10 @@
+import 'package:app_project/view/signup.view.dart';
 import 'package:app_project/view/widgets/button.global.dart';
 import 'package:app_project/view/widgets/social.login.dart';
 import 'package:app_project/view/widgets/text.from.global.dart';
 import 'package:flutter/material.dart';
 import 'package:app_project/utils/global.colors.dart';
+import 'package:get/get.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
@@ -78,15 +80,24 @@ class LoginView extends StatelessWidget {
         color:  Colors.white,
         alignment: Alignment.center,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Don\'t have an account?'
             ),
             InkWell(
-              child: Text(
-                ' Sign Up',
-                style: TextStyle(
-                  color: GlobalColors.mainColor,
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 20),
+                ),
+                onPressed: (){
+                  Get.to(SignUpView());
+                },
+                child: Text(
+                  ' Sign Up',
+                  style: TextStyle(
+                    color: GlobalColors.mainColor,
+                  ),
                 ),
               ),
             ),

@@ -2,7 +2,6 @@ import 'package:app_project/utils/global.colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class SocialLogin extends StatelessWidget {
   const SocialLogin({Key? key}) : super(key: key);
 
