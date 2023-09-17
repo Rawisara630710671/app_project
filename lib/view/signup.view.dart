@@ -1,3 +1,4 @@
+import 'package:app_project/screens/current.location.screen.dart';
 import 'package:app_project/view/login.view.dart';
 import 'package:app_project/view/widgets/text.from.global.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ class SignUpView extends StatelessWidget {
   const SignUpView({
     Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,9 @@ class SignUpView extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 15,),
+                const SizedBox(
+                  height: 15,
+                ),
                 Column(
                   children: <Widget>[
                     inputFile(label: "UserName"),
@@ -80,41 +82,68 @@ class SignUpView extends StatelessWidget {
                     ),
                   ],
                 ),
+                Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'Add Your Crrent Location',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                ),
+                const SizedBox(height: 5),
                 Container(
-                  padding: EdgeInsets.only(top: 3, left: 3),
                   child: MaterialButton(
                     minWidth: double.infinity,
                     height: 30,
-                    onPressed: () {},
-                    color: GlobalColors.mainColor,
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (BuildContext context) {
+                            return const CurrentLocationScreen();
+                          }));
+                    },
+                    color: Colors.blue[300],
                     elevation: 0,
                     child: Text(
-                      'Login',
+                      'crrent location',
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.bold,
                         fontSize: 15,
                         color: Colors.white,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 40,),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return LoginView();
+                    }));
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: GlobalColors.mainColor
+                  ),
+                  child: const Text('Login'),
+                ),
                 Container(
-                  height: 50,
-                  color:  Colors.white,
+                  height: 40,
+                  color: Colors.white,
                   alignment: Alignment.center,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                          'Already have an account?'
-                      ),
+                      Text('Already have an account?'),
                       InkWell(
                         child: TextButton(
                           style: TextButton.styleFrom(
-                            textStyle: const TextStyle(fontSize: 20),
+                            textStyle: const TextStyle(fontSize: 17),
                           ),
-                          onPressed: (){
+                          onPressed: () {
                             Get.to(LoginView());
                           },
                           child: Text(
