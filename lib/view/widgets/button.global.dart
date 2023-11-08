@@ -1,4 +1,5 @@
 import 'package:app_project/utils/global.colors.dart';
+import 'package:app_project/view/mylocation.view.dart';
 import 'package:flutter/material.dart';
 
 class ButtonGlobal extends StatelessWidget {
@@ -8,7 +9,7 @@ class ButtonGlobal extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        print('Login'); /////edit
+        const MyLocationView(); /////edit
       },
       child: Container(
         alignment: Alignment.center,

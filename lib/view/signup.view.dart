@@ -69,7 +69,6 @@ class SignUpView extends StatelessWidget {
                 ),
                 Column(
                   children: <Widget>[
-                    inputFile(label: "UserName"),
                     inputFile(label: "Email"),
                     inputFile(label: "Phone"),
                     inputFile(

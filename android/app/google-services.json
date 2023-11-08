@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "811307744386",
+    "project_id": "fir-notidust",
+    "storage_bucket": "fir-notidust.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811307744386:android:b372964f46e52a0bff089b",
+        "android_client_info": {
+          "package_name": "com.example.app_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEVEy8C2KcpONjSiFeq0fxltN7qPrRvPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

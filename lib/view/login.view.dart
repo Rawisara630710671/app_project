@@ -6,9 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:app_project/utils/global.colors.dart';
 import 'package:get/get.dart';
 
+import '../screens/current.location.screen.dart';
+
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
 
@@ -51,10 +53,10 @@ class LoginView extends StatelessWidget {
 
                 // Email Input
                 TextFormGlobal(
-                  controller: emailController,
-                  text: 'Email',
+                  controller: phoneController,
+                  text: 'Phone',
                   obscure: false,
-                  textInputType: TextInputType.emailAddress,
+                  textInputType: TextInputType.phone,
                 ),
 
                 const SizedBox(height: 10),
@@ -67,9 +69,33 @@ class LoginView extends StatelessWidget {
                     obscure: true
                 ),
                 const SizedBox(height: 20),
-                const ButtonGlobal(),
-                const SizedBox(height: 30),
-                SocialLogin(),
+
+                Container(
+                  child: MaterialButton(
+                    minWidth: double.infinity,
+                    height: 30,
+                    onPressed: (
+
+                        ) {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (BuildContext context) {
+                            return const CurrentLocationScreen();
+                          }));
+                    },
+                    color: GlobalColors.mainColor,
+                    elevation: 0,
+                    child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                //const SizedBox(height: 30),
+                //SocialLogin(),
               ],
             ),
           ),
